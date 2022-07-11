@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "delightful-froge",
+  "version": "${version}",
+
+  "name": "Delightful Froge",
+  "description": "froge :)",
+  "authors": [
+    "glisco"
+  ],
+  "contact": {},
+
+  "license": "MIT",
+  "icon": "assets/delightful/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "io.wispforest.delightfulfroge.DelightfulFroge"
+    ]
+  },
+
+  "mixins": [
+    "delightful-froge.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": "*",
+    "fabric": "*",
+    "minecraft": "1.19"
+  }
+}
