@@ -6,9 +6,15 @@
   "name": "Delightful Froge",
   "description": "froge :)",
   "authors": [
-    "glisco"
+    "glisco",
+    "Noaaan"
   ],
-  "contact": {},
+
+  "contact": {
+    "homepage": "https://modrinth.com/mod/delightful-froge",
+    "sources": "https://github.com/wisp-forest/delightful-froge",
+    "issues": "https://github.com/wisp-forest/delightful-froge/issues"
+  },
 
   "license": "MIT",
   "icon": "assets/delightful/icon.png",
@@ -27,6 +33,14 @@
   "depends": {
     "fabricloader": "*",
     "fabric": "*",
-    "minecraft": "1.19"
+    "minecraft": "1.19.x"
+  },
+
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/xrwHKktV2d"
+      }
+    }
   }
 }
