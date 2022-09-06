@@ -43,7 +43,7 @@ public abstract class FrogEntityMixin extends MobEntity {
 
     @Override
     protected ActionResult interactMob(PlayerEntity player, Hand hand) {
-        if (!player.isSneaking() || this.getVariant() != DelightfulFroge.FROGE) return ActionResult.PASS;
+        if (player.isSneaking() || this.getVariant() != DelightfulFroge.FROGE) return ActionResult.PASS;
         if (this.world.isClient) {
             for (int i = 0; i < 5; i++) {
                 double x = this.getX() + (this.random.nextDouble() - .5);
