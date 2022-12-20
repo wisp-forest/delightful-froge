@@ -6,8 +6,6 @@
   "mixins": [
     "FrogEntityMixin"
   ],
-  "client": [
-  ],
   "injectors": {
     "defaultRequire": 1
   }
