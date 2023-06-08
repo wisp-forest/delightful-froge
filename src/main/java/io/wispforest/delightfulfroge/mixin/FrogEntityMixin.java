@@ -43,15 +43,15 @@ public abstract class FrogEntityMixin extends MobEntity {
 
     @Override
     protected ActionResult interactMob(PlayerEntity player, Hand hand) {
-        if (player.isSneaking() || this.getVariant() != DelightfulFroge.FROGE) return ActionResult.PASS;
-        if (this.world.isClient) {
+        if (player.isSneaking() || !player.getStackInHand(hand).isEmpty() || this.getVariant() != DelightfulFroge.FROGE) return super.interactMob(player, hand);
+        if (this.getWorld().isClient) {
             for (int i = 0; i < 5; i++) {
                 double x = this.getX() + (this.random.nextDouble() - .5);
                 double y = this.getY() + (this.random.nextDouble() - .5) + .25;
                 double z = this.getZ() + (this.random.nextDouble() - .5);
 
-                this.world.addParticle(ParticleTypes.HEART, x, y, z, 0, 0, 0);
-                this.world.addParticle(ParticleTypes.WAX_ON, x, y + .4, z, this.random.nextDouble() * 2.5, this.random.nextDouble() * 2.5, this.random.nextDouble() * 2.5);
+                this.getWorld().addParticle(ParticleTypes.HEART, x, y, z, 0, 0, 0);
+                this.getWorld().addParticle(ParticleTypes.WAX_ON, x, y + .4, z, this.random.nextDouble() * 2.5, this.random.nextDouble() * 2.5, this.random.nextDouble() * 2.5);
             }
 
             this.usingTongueAnimationState.start(this.age);
